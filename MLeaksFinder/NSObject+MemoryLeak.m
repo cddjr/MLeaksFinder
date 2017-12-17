@@ -129,6 +129,14 @@ const void *const kLatestSenderKey = &kLatestSenderKey;
         if ([systemVersion compare:@"10.0" options:NSNumericSearch] != NSOrderedAscending) {
             [whitelist addObject:@"UISwitch"];
         }
+        //似乎iOS 11.2存在不释放的问题
+        if ([systemVersion compare:@"11.2" options:NSNumericSearch] != NSOrderedAscending) {
+            [whitelist addObject:@"UISearchBarTextField"];
+            [whitelist addObject:@"UITextField"];
+        }
+        if ([systemVersion compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending) {
+            [whitelist addObject:@"UISearchController"];
+        }
     });
     return whitelist;
 }
