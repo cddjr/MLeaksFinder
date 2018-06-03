@@ -137,6 +137,7 @@ const void *const kLatestSenderKey = &kLatestSenderKey;
         }
         if ([systemVersion compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending) {
             [whitelist addObject:@"UISearchController"];
+            [whitelist addObject:@"UINavigationButton"];
         }
     });
     return whitelist;
